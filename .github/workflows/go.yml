@@ -1,4 +1,4 @@
-name: Go
+name: create cmd binary
 on: [push]
 jobs:
 
@@ -22,7 +22,13 @@ jobs:
 
     - name: Build
       run: go build -v ./cmd/main.go
-    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: server
+        # Directory containing files to upload
+        path: ./main
 #     - name: Action Release
 #       uses: yakuhzi/action-release@v1.2.0
 #       with:
