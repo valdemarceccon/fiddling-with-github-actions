@@ -23,8 +23,8 @@ jobs:
     - name: Build
       run: go build -v ./cmd/main.go
     
-    - name: Action Release
-      uses: yakuhzi/action-release@v1.2.0
-      with:
-        # File to upload to the release
-        file: ./main
+#     - name: Action Release
+#       uses: yakuhzi/action-release@v1.2.0
+#       with:
+#         # File to upload to the release
+#         file: ./main
