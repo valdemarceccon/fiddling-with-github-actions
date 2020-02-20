@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
-		_, err := w.Write([]byte("<h1>Olá</h1>"))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		_, err := w.Write([]byte("<h1>Outra mensagem</h1>"))
 
 		if err != nil {
 			log.Println(err.Error())
@@ -16,4 +16,3 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
-
