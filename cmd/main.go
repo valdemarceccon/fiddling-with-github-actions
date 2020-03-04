@@ -7,7 +7,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := w.Write([]byte("<h1>Outra mdfgsdgsdfgsdfg\sdfensagem</h1>"))
+		_, err := w.Write([]byte("<h1>Outra mdfgsdgsdfgsdfgsdfensagem</h1>"))
 
 		if err != nil {
 			log.Println(err.Error())
