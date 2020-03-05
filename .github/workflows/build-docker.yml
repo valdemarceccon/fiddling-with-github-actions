@@ -10,4 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Docbker build
-        run: docker build . -t docker.pkg.github.com/valdemarceccon/fiddling-with-github-actions/app:1.0 
+        run: docker build . -t docker.pkg.github.com/valdemarceccon/fiddling-with-github-actions/app:1.0
+      - name: Docker login
+        run: docker login docker.pkg.github.com --username valdemarceccon
+
