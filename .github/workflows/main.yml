@@ -1,0 +1,16 @@
+name: CI
+on:
+  create:
+    release:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: DigitalOcean Kubernetes
+      uses: matootie/dokube@v1.2.0
+      with:
+        personalAccessToken: ${{ secrets.DO_TOKEN }}
+        clusterName: ${{ secrets.DO_K8S_NAME }}
+    - name: update service
+      run:  kubectl set image deployment/server-my-app server-my-app=docker.pkg.github.com/${{ github.repository }}/server:${{ github.sha }} --record      
